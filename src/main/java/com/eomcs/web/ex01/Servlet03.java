@@ -1,5 +1,5 @@
 // 서블릿 만들기 - javax.servlet.http.HttpServlet 추상 클래스 상속
-package bitcamp.ex01;
+package com.eomcs.web.ex01;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -25,10 +25,16 @@ public class Servlet03 extends HttpServlet {
 
   // service()를 오버라이딩 하는 대신에
   // doGet(), doPost(), doHead() 등을 오버라이딩 하라.
+  // 호출과정:
+  // => 웹브라우저
+  //   => 톰캣 서버
+  //     => Servlet03.service(ServletRequest, ServletResponse) 
+  //       => Serlvet03.service(HttpServletRequest, HttpServletResponse)
+  //         => Servlet03.doGet(HttpServletRequest, HttpServletResponse)
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse res)
       throws ServletException, IOException {
-    System.out.println("Servlet03.doGet(ServletRequest,ServletResponse)");
+    System.out.println("Servlet03.doGet(HttpServletRequest,HttpServletResponse)");
   }
 }
 
