@@ -26,7 +26,7 @@ public class Servlet04 extends GenericServlet {
 
     // 2) ServletContext를 통해 웹 자원의 실제 경로를 알아낸다.
     // => getRealPath(현재 웹 애플리케이션의 파일 경로) : 실제 전체 경로를 리턴한다.
-    String path = ctx.getRealPath("/WEB-INF/photo.jpeg");
+    String path = ctx.getRealPath("/photo.jpeg");
     System.out.println(path);
 
     FileInputStream in = new FileInputStream(path);
@@ -44,6 +44,7 @@ public class Servlet04 extends GenericServlet {
     }
 
     out.flush(); // 버퍼 데코레이터에 보관된 데이터를 클라이언트로 방출한다.
+    out.close();
     in.close();
   }
 }
