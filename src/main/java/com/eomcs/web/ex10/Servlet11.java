@@ -23,14 +23,19 @@ public class Servlet11 extends HttpServlet {
     //
 
     // 쿠키 유효기간
-    // => 유효기간을 설정하면 그 기간 동안에만 웹서버에게 쿠키를 보낸다.
+    // => 유효기간을 설정하면 웹브라우저는 그 기간 동안 보관하고 있다가
+    // 웹서버에게 쿠키를 보낸다.
     // => HTTP 응답 프로토콜
-    /*
-     * HTTP/1.1 200 Set-Cookie: v1=aaa <---- 유효기간이 설정되지 않은 쿠키 Set-Cookie: v2=bbb; Max-Age=30;
-     * Expires=Wed, 03-Apr-2019 01:33:10 GMT Set-Cookie: v3=ccc; Max-Age=60; Expires=Wed,
-     * 03-Apr-2019 01:33:40 GMT Content-Type: text/plain;charset=UTF-8 Content-Length: 36 Date: Wed,
-     * 03 Apr 2019 01:32:40 GMT
-     */
+    //
+    // HTTP/1.1 200
+    // Set-Cookie: v1=aaa
+    // Set-Cookie: v2=bbb; Max-Age=30; Expires=Wed, 08-Apr-2020 02:41:43 GMT
+    // Set-Cookie: v3=ccc; Max-Age=60; Expires=Wed, 08-Apr-2020 02:42:13 GMT
+    // Content-Type: text/plain;charset=UTF-8
+    // Content-Length: 36
+    // Date: Wed, 08 Apr 2020 02:41:13 GMT
+    // Keep-Alive: timeout=20
+    // Connection: keep-alive
 
     // 유효기간을 설정하지 않으면 웹브라우저가 실행되는 동안에만 웹서버에게 쿠키를 보낸다.
     // => 웹 브라우저는 메모리에 쿠키를 보관한다.

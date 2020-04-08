@@ -24,19 +24,23 @@ public class Servlet21 extends HttpServlet {
 
     // 쿠키 사용범위
     // => 쿠키의 사용 범위를 지정하지 않으면 쿠키를 발행한 URL 범위에 한정된다.
-    // 즉 같은 URL로 요청할 때만 쿠키를 보내야 한다.
+    // 즉 같은 URL로 요청할 때만 쿠키를 보낸다.
     // => 예)
     // 쿠키를 발행한 URL : /ex10/s21
     // 쿠키를 보낼 수 있는 URL : /ex10/*
     // 쿠키를 보낼 수 없는 URL : /ex10 이외의 모든 URL
     // => HTTP 응답 프로토콜
-    /*
-     * HTTP/1.1 200 Set-Cookie: v1=aaa <---- 사용 범위가 지정되지 않았다. Set-Cookie: v2=bbb;
-     * Path=/java-web/ex10/a <--- 사용 범위가 /java-web/ex10/a 로 제한되었다. Set-Cookie: v3=ccc;
-     * Path=/java-web Content-Type: text/plain;charset=UTF-8 Content-Length: 36 Date: Wed, 03 Apr
-     * 2019 02:05:46 GMT
-     * 
-     */
+    //
+    // HTTP/1.1 200
+    // Set-Cookie: v1=aaa
+    // Set-Cookie: v2=bbb; Path=/eomcs-java-web/ex10/a
+    // Set-Cookie: v3=ccc; Path=/eomcs-java-web
+    // Content-Type: text/plain;charset=UTF-8
+    // Content-Length: 36
+    // Date: Wed, 08 Apr 2020 02:51:12 GMT
+    // Keep-Alive: timeout=20
+    // Connection: keep-alive
+    //
     // 사용 범위를 지정하지 않은 쿠키
     // => 쿠키를 발급한 서블릿과 같은 경로이거나 하위 경로의 서블릿을 요청할 때만
     // 웹 브라우저가 서버에 쿠키를 보낸다.
@@ -46,10 +50,10 @@ public class Servlet21 extends HttpServlet {
     // => 쿠키를 발급한 서블릿의 경로에 상관없이 지정된 경로의 서블릿을 요청할 때
     // 웹 브라우저가 서버에 쿠키를 보낸다.
     Cookie c2 = new Cookie("v2", "bbb");
-    c2.setPath("/bitcamp-java-web/ex10/a");
+    c2.setPath("/eomcs-java-web/ex10/a");
 
     Cookie c3 = new Cookie("v3", "ccc");
-    c3.setPath("/bitcamp-java-web");
+    c3.setPath("/eomcs-java-web");
 
     // 어~ 왜 쿠키의 경로를 적을 때 웹 애플리케이션 루트(컨텍스트 루트)까지 적나요?
     // => 쿠키 경로는 서블릿 컨테이너가 사용하는 경로가 아니다.
