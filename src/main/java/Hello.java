@@ -1,19 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Hello {
 
-  { // 인스턴스 블록
-    System.out.println("ex06 인스턴스 생성!");
-  }
-
-  static { // 스태틱 블록
-    System.out.println("ex06 클래스 로딩");
-  }
-
   public static void main(String[] args) {
-    int a = 10;
-    if (a < 100) {
-      System.out.println("okok");
+    class JobPosting {
+      int no;
+      String title;
+      List<String> files;
     }
+
+    List<JobPosting> jobPostings = new ArrayList<>();
+
+    for (JobPosting jobPost : jobPostings) {
+      System.out.println(jobPost.no);
+      System.out.println(jobPost.title);
+      for (String file : jobPost.files) {
+        System.out.println(file);
+      }
+    }
+
   }
 
 }
