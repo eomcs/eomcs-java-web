@@ -36,13 +36,13 @@
 -->
 
 <!-- 필터 등록 -->
-<!--   
+<!--  
   <filter>
     <filter-name>Filter01</filter-name>
     <filter-class>com.eomcs.web.ex02.Filter01</filter-class>
   </filter>
 -->
-  
+
 <!-- 필터를 적용할 URL을 지정 -->
 <!--  
   <filter-mapping>
@@ -52,36 +52,34 @@
 -->
 
 <!-- 서블릿 등록 -->
-<!--  
   <servlet>
     <servlet-name>s01</servlet-name>
     <servlet-class>com.eomcs.web.ex01.Servlet01</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>Servlet02</servlet-name>
-    <servlet-class>com.eomcs.web.ex01.Servlet02</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Servlet03</servlet-name>
-    <servlet-class>com.eomcs.web.ex01.Servlet03</servlet-class>
-  </servlet>
--->
-
-<!-- 서블릿을 실행할 때 사용할 URL path를 설정 -->
-<!--  
+  
+<!-- 서블릿을 실행할 때 사용할 URL path를 설정 -->  
   <servlet-mapping>
     <servlet-name>s01</servlet-name>
     <url-pattern>/ohora/haha</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Servlet02</servlet-name>
+    <servlet-class>com.eomcs.web.ex01.Servlet02</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Servlet02</servlet-name>
     <url-pattern>/ex01/s02</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Servlet03</servlet-name>
+    <servlet-class>com.eomcs.web.ex01.Servlet03</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Servlet03</servlet-name>
     <url-pattern>/ex01/s03</url-pattern>
   </servlet-mapping>  
--->
 
   <!--  
   <servlet>
