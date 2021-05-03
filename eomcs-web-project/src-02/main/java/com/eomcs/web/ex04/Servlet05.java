@@ -64,10 +64,9 @@ public class Servlet05 extends GenericServlet {
 
     // 파일 데이터는 getPart()를 이용한다.
     Part photoPart = httpReq.getPart("photo");
-    String filename = "";
     if (photoPart.getSize() > 0) {
       // 파일을 선택해서 업로드 했다면,
-      filename = UUID.randomUUID().toString();
+      String filename = UUID.randomUUID().toString();
       photoPart.write(this.uploadDir + "/" + filename);
       out.printf("사진=%s<br>\n", filename);
       out.printf("<img src='../upload/%s' height='50'><br>\n", filename);
